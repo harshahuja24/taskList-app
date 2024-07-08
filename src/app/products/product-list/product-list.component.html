@@ -1,0 +1,22 @@
+<p>product-list works!</p>
+
+<table>
+    <tr *ngFor="let product of productData">
+        <td>{{product.productId}}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.productCategory}}</td>
+        <td>{{product.productPrice}}</td>
+        <td>{{product.productRating}}</td>
+        <td><button (click)="selectProduct(product)">View More</button></td>
+    </tr>
+</table>
+
+<div *ngIf="selectedProduct">
+    
+        <p>{{selectedProduct.productId}}</p>
+        <p>{{selectedProduct.productName}}</p>
+        <p>{{selectedProduct.productCategory}}</p>
+        <p>{{selectedProduct.productPrice}}</p>
+        <p>{{selectedProduct.productRating}}</p>
+
+</div>

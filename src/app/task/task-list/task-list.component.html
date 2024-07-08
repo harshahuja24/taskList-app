@@ -1,0 +1,35 @@
+<input type="text" placeholder="Search here..."
+ [(ngModel)]="searchParameter" (input)="search()">
+<!-- the [()] is known as banana box -->
+<button (click)="toggle()">Danger!!!</button>
+<!-- <table [ngClass]="isDanger ? 'bg-danger' : '' "> first way that can be provided in a single way  -->
+    <!-- the above shows conditional styling! -->
+<!-- <table [ngClass]="{ 'bg-danger': isDanger, 'bg-warn' : !isDanger}"> -->
+    <!-- the below gives multiple styling as an object now its like python ka dict in which the class is the key and the value is the value and 
+    whichever is giving true usko vo apply hoga if both true then based on precedency-->
+
+<table [ngClass]="{ 'font-weight': false? 'bold': 'bolder' }">
+    <tr *ngFor="let Data of task" >
+        <td>{{Data.id}}</td>
+        <td>{{Data.title}}</td>
+        <td>{{Data.description}}</td>
+        <td>{{Data.due_date}}</td>
+        <td>{{Data.priority}}</td>
+        <td>{{Data.status}}</td>
+        <td>{{Data.assigned_to}}</td>
+    </tr>
+</table>
+<!-- Dependencies injector a very imp comcept  -->
+<!-- 
+ 
+    in this when we have 3 seperate classes and one is Utitls 
+    that has all the function like add sub fact etc then we have 2 different classes that has Md and Sd that want to access the func of the class Utits 
+    now to access they will have to create an objs now if we have 100 such classes to 100 objs na ?? that a waste here comes injector ie 
+    we create an object pelhe se he and give it to Md and Sd which reduces the problem ke object ek he banega but use kaffie saare karenge 
+   
+
+    basic def: 
+    depencency injection is where your injector is responsible for creating the object of the dependency and the injector will inject the dependency(utitils class)
+    into my rest required classes now all of them will have the same object yani ek he object pauchayega this concept is called as dependency 
+    in services we use dependency injection.
+ --> 
